@@ -67,14 +67,10 @@ class VideoGet():
                     if self.connected == False and time.time() > 1:
                         self.connect()
 
-            #print("Done Recv: {}".format(len(data)))
             packed_msg_size = self.data[:self.payload_size]
-            #print(packed_msg_size)
             self.data = self.data[self.payload_size:]
             msg_size = struct.unpack(">L", packed_msg_size)[0]
-            #print("msg_size: {}".format(msg_size))
             while len(self.data) < msg_size:
-                # print("msg2 _____ in video getter")
                 self.data += self.conn.recv(4096)
                 if self.data == b'':
                     if self.connected == True:
@@ -84,13 +80,10 @@ class VideoGet():
                         self.connect()
             self.frame_data = self.data[:msg_size]
             self.frame_data_send = self.frame_data
-            # print(self.frame_data_send)
-            # print(type(self.frame_data_send))
             self.data = self.data[msg_size:]
-            #print(self.frame_data_send)
 
 
-class mouse():
+class Mouse():
     def __init__(self):
         self.font = cv2.FONT_HERSHEY_PLAIN
         self.leftTop    = None
@@ -161,9 +154,9 @@ class ShapeDetection:
                                    param1=10, param2=25, minRadius=10, maxRadius=70)
         cv2.imshow('THRESH', thresh1)
         contours = cv2.findContours(thresh1.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-        contours = contours[0]      #if imutils.is_cv() else contours[1]
-        threshold_area_low = 500    #threshold area low
-        threshold_area_high = 15000 #threshold area high
+        contours = contours[0]      
+        threshold_area_low = 500  
+        threshold_area_high = 15000 
         cXtmp = 0
         cYtmp = 0
         goNext = False
@@ -318,7 +311,7 @@ class ShapeDetection:
 video_getter = VideoGet()
 video_getter.start()
 
-Mouse = mouse()
+mouse = Mouse()
 shapeDetector = ShapeDetection()
 frame_loop = False
 
@@ -331,9 +324,9 @@ while True:
     frame = cv2.imdecode(frame, cv2.IMREAD_COLOR)
 
     LH = cv2.getTrackbarPos('adaptation', 'Output')
-    # Perspective Transformation
-    if Mouse.draw_counter == 4:
-        src_pts = np.array([Mouse.leftTop, Mouse.rightTop, Mouse.rightBottom, Mouse.leftBottom], dtype=np.float32)
+    # Perspective Transformation on click
+    if mouse.draw_counter == 4:
+        src_pts = np.array([mouse.leftTop, mouse.rightTop, mouse.rightBottom, mouse.leftBottom], dtype=np.float32)
         dst_pts = np.array([[0, 0], [640, 0], [640, 480], [0, 480]], dtype=np.float32)
         M = cv2.getPerspectiveTransform(src_pts, dst_pts)
         warp = cv2.warpPerspective(frame, M, (640, 480))
