@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1258</width>
+    <height>1097</height>
+   </rect>
+  </property>
+  <property name="palette">
+   <palette>
+    <active/>
+    <inactive/>
+    <disabled/>
+   </palette>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>11</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>ITU ROV CONTROLLER</string>
+  </property>
+  <widget class="QWidget" name="central_vl">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QGridLayout" name="main_gl" rowstretch="0" columnstretch="0,1500,420,0">
+      <item row="0" column="2">
+       <layout class="QGridLayout" name="rightside_gl" rowstretch="0,0" columnstretch="0">
+        <item row="1" column="0">
+         <layout class="QGridLayout" name="status_gl">
+          <item row="1" column="0">
+           <widget class="Line" name="l3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="st_joystick_lb">
+            <property name="text">
+             <string>not connected</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="comm_lb">
+            <property name="text">
+             <string>Communication:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="joystick_lb">
+            <property name="text">
+             <string>Joystick:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="st_comm_lb">
+            <property name="text">
+             <string>not connected</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="Line" name="l2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="Line" name="l1">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" rowspan="2">
+           <widget class="Line" name="l4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="MainControls_tab">
+           <attribute name="title">
+            <string>Main Controls</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="3" column="0">
+             <widget class="QGroupBox" name="data_gb">
+              <property name="title">
+               <string>Data</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="0" column="1">
+                <widget class="QLabel" name="st_temperature_lb">
+                 <property name="text">
+                  <string>-</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="st_pH_lb">
+                 <property name="text">
+                  <string>-</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="temperature_lb">
+                 <property name="text">
+                  <string>Temperature:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="pH_lb">
+                 <property name="text">
+                  <string>pH:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLabel" name="st_pressure_lb">
+                 <property name="text">
+                  <string>-</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="pressure_lb">
+                 <property name="text">
+                  <string>Pressure:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="vehicleip_lb">
+                 <property name="text">
+                  <string>Vehicle IP:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLabel" name="st_vehicleip_lb">
+                 <property name="text">
+                  <string>-</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QGroupBox" name="cannon_gb">
+              <property name="title">
+               <string>Cannon</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_3" columnstretch="30,30,30">
+               <item row="1" column="2">
+                <widget class="QRadioButton" name="AF_rb">
+                 <property name="text">
+                  <string>AF</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="LargeRadius_lb">
+                 <property name="text">
+                  <string>Len. of Large Radius:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="SmallLength_lb">
+                 <property name="text">
+                  <string>Small Length:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="SmallRadius_lb">
+                 <property name="text">
+                  <string>Len. of Small radius:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="LargeLength_lb">
+                 <property name="text">
+                  <string>Large Length</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QRadioButton" name="BFIC_rb">
+                 <property name="text">
+                  <string>BF-IC</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QRadioButton" name="FPF_rb">
+                 <property name="text">
+                  <string>FPF</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="2">
+                <widget class="QRadioButton" name="TFJRA_rb">
+                 <property name="text">
+                  <string>TF-JRA</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="2">
+                <widget class="QLabel" name="st_wofc_lb">
+                 <property name="text">
+                  <string>-</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0" colspan="2">
+                <widget class="QLabel" name="wofc_lb">
+                 <property name="text">
+                  <string>Weight of cannon:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="SmallLength_le">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="LargeLength_le"/>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="SmallRadius_le"/>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="LargeRadius_le"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <layout class="QHBoxLayout" name="cam2_key_hl" stretch="0">
+              <item>
+               <widget class="QGroupBox" name="KeyboardM_gb">
+                <property name="title">
+                 <string>Keyboard Missions</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_4">
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="Flag_cb">
+                   <property name="text">
+                    <string>Flag</string>
+                   </property>
+                   <property name="tristate">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QCheckBox" name="Cannon_cb">
+                   <property name="text">
+                    <string>Cannon</string>
+                   </property>
+                   <property name="tristate">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QCheckBox" name="Void_cb">
+                   <property name="text">
+                    <string>Void</string>
+                   </property>
+                   <property name="tristate">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QCheckBox" name="Autonomous_cb">
+                   <property name="text">
+                    <string>Autonomous</string>
+                   </property>
+                   <property name="tristate">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QCheckBox" name="Gripper_cb">
+                   <property name="text">
+                    <string>Gripper</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QCheckBox" name="CamS1_cb">
+                   <property name="text">
+                    <string>Cam Servo</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="0">
+                  <widget class="QCheckBox" name="MicroROV_cb">
+                   <property name="text">
+                    <string>MicroROV</string>
+                   </property>
+                   <property name="tristate">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <widget class="QGroupBox" name="cam2_gb">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="title">
+               <string>Camera </string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_6">
+               <item row="3" column="0">
+                <widget class="QPushButton" name="frontcam_pb">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="text">
+                  <string>Front Camera</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QPushButton" name="bottomcam_pb">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="text">
+                  <string>Bottom Camera</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="record_pb">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="text">
+                  <string>Start/Stop Record</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0" colspan="2">
+                <widget class="QPushButton" name="closecam_pb">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="text">
+                  <string>close cam</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QPushButton" name="cannondims_pb">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="text">
+                  <string>Cannon Dims</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QPushButton" name="takephoto_pb">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="text">
+                  <string>Take Photo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="recordtime_lb">
+                 <property name="styleSheet">
+                  <string notr="true">border: 2px solid;
+border-color: rgb(26, 10, 255);</string>
+                 </property>
+                 <property name="text">
+                  <string>0:00</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="Info_tab">
+           <attribute name="title">
+            <string>Info</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_2" stretch="90,100,50,50,20">
+            <item>
+             <widget class="QLabel" name="logo_lb">
+              <property name="styleSheet">
+               <string notr="true">image: url(:/prefix/ROV LOGO SİYAH DİKEY.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="info_space">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="info_lb">
+              <property name="text">
+               <string>Designed by
+Abdullah Enes Bedir,
+İhsan Soydemir,
+Recep Salih Yazar.                          </string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLCDNumber" name="clock_LCD">
+              <property name="sizeIncrement">
+               <size>
+                <width>0</width>
+                <height>-15005</height>
+               </size>
+              </property>
+              <property name="digitCount">
+               <number>4</number>
+              </property>
+              <property name="mode">
+               <enum>QLCDNumber::Dec</enum>
+              </property>
+              <property name="segmentStyle">
+               <enum>QLCDNumber::Flat</enum>
+              </property>
+              <property name="value" stdset="0">
+               <double>1700.000000000000000</double>
+              </property>
+              <property name="intValue" stdset="0">
+               <number>1700</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="date_lb">
+              <property name="font">
+               <font>
+                <stylestrategy>PreferDefault</stylestrategy>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
+              <property name="text">
+               <string>March 28th, 2019</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="3">
+       <widget class="Line" name="main_l">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <layout class="QVBoxLayout" name="leftside_vl" stretch="800,0,200">
+        <item>
+         <widget class="QLabel" name="camera_lb">
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/prefix/arayuz-bg.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="warnings_static_lb">
+          <property name="font">
+           <font>
+            <family>Segoe UI Symbol</family>
+            <pointsize>14</pointsize>
+            <weight>9</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>true</underline>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 75 18pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+font: 75 14pt &quot;Segoe UI Symbol&quot;;
+text-decoration: underline;</string>
+          </property>
+          <property name="text">
+           <string>         WARNINGS</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="warnings_lb">
+          <property name="styleSheet">
+           <string notr="true">
+font: 75 8pt &quot;Sitka Text&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../PycharmProjects/pyqt/bg.qrc"/>
+ </resources>
+ <connections/>
+</ui>
