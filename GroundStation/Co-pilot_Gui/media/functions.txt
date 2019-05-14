@@ -1,0 +1,37 @@
+﻿ITU ROV Vehicle Functions and ascii representations
+
+     FUNCTION          DATA
+    
+    Water Temperature = 32 # data1 ilk 8 bit data 2 son 8 bit bunları 16 bitlik bir variablea bitshift yaparak yazacaksınız. Sonra 256'ya böleceksiniz. birimi santigrat derece
+    Pressure 	      = 33 # yukarıdakiyle aynı. Birimi santim
+    X doğrultusundaki hız = 34 # yukarıdakiyle aynı. Birimi m/s
+    Y dpğrultusundaki hız = 35 # yukarıdakiyle aynı. Birimi m/s
+
+    surge = 3     	# forward = 0 | backward = 512 //Rahat iletişim için isimleri değiştirdim
+    sway = 6    	# left = 0 | right = 511
+    heave = 12         	# down = 0 | up = 512
+    yaw = 24        	# counter clockwise = 0 | clockwise = 512
+    
+    gripper = 48    # open = 111  | close = 222
+    
+    flagger = 96    # blue_1 = 111 | blue_2 = 222 | red_1 = 333 | red_2 = 444 | main_position = 0
+    
+    camera1_1 = 192  # up = 111 | down = 222 // 2 kamera olduğu için nunları kamera birin aşağı yukarı sağ solu yaptım kamera 2 için de değerler belirlenmeli
+    
+    camera1_2 = 129  # left = 111 | right = 222 // değerleri 0 ile 255 arasında yapıyorum servoların açısına göre scale edilecek (örn 0 -> en sol , 255  en sağ 0 derece orta)
+    
+    void = 36       # void_fish = 111 | void_rock = 222 | void_main = 333 | main_position = 0
+    
+    led = 66        # on or off = 111
+    
+    microRov = 5    # send = 111 | receive = 222 | right = 333 | left = 444  
+    
+    AutoMode = 10   # on = 111 | off = 222 // ??????????????????
+
+    pH = 40         # get pH value = 111
+
+    Cannon = 80     # Open Cannon = 111
+
+    ** Bu durumların açı karşılıklarını mekanikçilerden öğrenmelisiniz.
+    
+    

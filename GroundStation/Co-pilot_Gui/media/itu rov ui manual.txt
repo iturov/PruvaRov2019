@@ -1,0 +1,13 @@
+_hl: horizontal layout
+_vl: vertical layout
+_gl: grid layout
+_gb: groupbox
+_lb: label
+_l: line
+_pb: pushbutton
+_cb: ceckbox
+_rb: radio button
+_tab: sekme
+_LCD: LCD number (saat için)
+st_: status (default ui'de "-" olan, alýnan verilerin yansýtýlacaðý labellar için)
+
