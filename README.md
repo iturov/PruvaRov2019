@@ -7,3 +7,12 @@ This repository contains the ROV vehicle created by Istanbul Technical Universit
 It contains the groundstation GUIs(pilot GUI, co-pilot GUI) and the vehicle part(Raspberry Pi, STM32).
 
 Pruva ROV is the 4th vehicle produced for Mate ROV competition.
+
+Used libraries:
+- PyQt5
+- OpenCV
+- Socket
+- threading
+- pygame
+- serial
+- zlib
